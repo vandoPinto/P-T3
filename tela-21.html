@@ -1,0 +1,97 @@
+<div style="height: 60px; width: 100%; background-color: #a9e5ea;">
+    <img style="height: 60px; width: 460px; position: absolute; right: 0px;" src="recursos/imgs/H1.png">
+    <p style="position: absolute;color: #294666;margin-left: 43px;margin-top: 26px;font-size: 12px;">TÓPICO<strong>
+            1</strong></p>
+    <p
+        style="position: absolute;font: normal normal normal 11px/15px Poppins;letter-spacing: 0px;color: #294666;margin-left: 112px;margin-top: 25px;width: 400px;">
+        PRÁTICAS INTEGRATIVAS EM SAÚDE: CONCEITOS, CUIDADO E RESULTADOS</p>
+</div>
+<div>
+    <div style="display: flex;">
+        <div style="width: 368px;margin-left: 41px;margin-top: 30px;">
+            <p style="font: normal normal bold 20px/30px Poppins;color: #FFA800;">Sistema de Informação em Saúde
+                para a Atenção Básica</p>
+            <p>Uma das ferramentas para o monitoramento é o cadastro do serviço de PIS no SISAB. Esse
+                sistema é parte do e-SUS Atenção
+                Básica (e-SUS AB) e propõe o incremento da gestão da informação, a automação dos processos, a
+                melhoria das condições de
+                infraestrutura e a melhoria dos processos de trabalho.</p>
+            <p>O registro deve ser realizado pelo profissional que conduz o
+                serviço, cabendo ao gestor conhecer e utilizar esses instrumentos para a gestão local.</p>
+            <p>Clique na imagem para conhecer
+                mais detalhadamente esse processo.</p>
+        </div>
+        <div id="botao_1" class="animate__animated animate__backInRight"
+            style="width: 440px; margin-top: -61px; cursor: pointer;">
+            <img src="recursos/imgs/img-slide-14.svg" style="width: 200px;position: absolute;left: -107px;top: 103px;">
+        </div>
+        <div id="janela_1" class="jan" style="cursor: pointer;">
+            <div
+                style="width: 745px;height: 401px;background: #307196 0% 0% no-repeat padding-box;border-radius: 10px;margin-top: 60px;margin-left: 70px;display: flex;justify-content: space-around;flex-direction: column;">
+                <div style="margin-top: 43px;margin-left: 28px;width: 689px;color: white;">
+                    <p>O registro é feito por dois meios:</p>
+                    <div style="margin-left: 26px;width: 663px;">
+                        <p>a) via prontuário eletrônico do cidadão (PEC), em locais informatizados; </p>
+                        <p style="margin-top: -10px;">b) via fichas de coleta de dados simplificada
+                            (CDS), os quais são softwares para captação de dados que alimentam do SISAB.</p>
+                    </div>
+                    <p>Quanto às fichas CDS, as práticas podem ser registradas como:</p>
+                    <div style="margin-left: 26px;width: 663px;">
+                        <p>• atendimento individual, pelos profissionais da área da saúde de nível superior,
+                            acessando o
+                            campo racionalidades em
+                            saúde; </p>
+                        <p style="margin-top: -7px;">
+                            • procedimento, por meio dos códigos SIGTAP, que é o sistema de gerenciamento da tabela
+                            de
+                            procedimentos,
+                            medicamentos, órteses/próteses e materiais especiais;
+                        </p>
+                        <p style="margin-top: -7px;">
+                            • atendimento odontológico, por cirurgiões-dentistas, técnicos ou
+                            auxiliares em saúde bucal, e por meio dos códigos SIGTAP;
+                        </p>
+                        <p style="margin-top: -7px;">
+                            • atividade coletiva, atividade 8 ou 14, por meio dos códigos
+                            SIGTAP.
+                        </p>
+                    </div>
+                    <p>No PEC, as PIS também podem ser registradas como racionalidades em saúde ou através dos
+                        códigos
+                        SIGTAP.</p>
+                </div>
+            </div>
+            <p style="position: absolute;top: 0px;left: 860px;color: white;">X</p>
+        </div>
+    </div>
+</div>
+<footer style="width: 1008px;height: 19px;display: flex;background-color: #CEE4F1;">
+    <div style="margin-top: -8px;display: flex;margin-left: 42px;">
+        <p style="color: #294666;font-size: 11px;">GESTÃO DA APS E PRÁTICAS INTEGRATIVAS EM SAÚDE</p>
+    </div>
+</footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

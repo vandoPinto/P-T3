@@ -1,0 +1,59 @@
+<div style="height: 60px; width: 100%; background-color: #a9e5ea;">
+    <img style="height: 60px; width: 460px; position: absolute; right: 0px;" src="recursos/imgs/H1.png">
+    <p style="position: absolute;color: #294666;margin-left: 43px;margin-top: 26px;font-size: 12px;">TÓPICO<strong>
+            1</strong></p>
+    <p
+        style="position: absolute;font: normal normal normal 11px/15px Poppins;letter-spacing: 0px;color: #294666;margin-left: 112px;margin-top: 25px;width: 400px;">
+        PRÁTICAS INTEGRATIVAS EM SAÚDE: CONCEITOS, CUIDADO E RESULTADOS</p>
+</div>
+<div>
+    <div style="display: flex;">
+        <div style="width: 324px;margin-left: 41px;margin-top: 70px;">
+            <p style="font: normal normal bold 20px/30px Poppins;color: #FFA800;">Gerência de Práticas Integrativas
+                em Saúde</p>
+            <p>A gestão das PIS é executada pela Gerência de Práticas Integrativas em Saúde (GERPIS),
+                criada pelo Decreto nº 33.384, de
+                5 de dezembro de 2011.</p>
+            <p>Clique no quadro e conheça as competências da GERPIS segundo o Decreto nº 39.546, de dezembro de
+                2018, em seu artigo 127:</p>
+        </div>
+        <div class="animate__animated animate__backInRight" style="width: 440px;margin-top: -61px;">
+            <img id="botao_1" src="recursos/imgs/img-slide-3.svg"
+                style="width: 353px; margin-left: 73px; margin-top: 119px; cursor: pointer;">
+        </div>
+        <div id="janela_1" class="jan">
+            <img src="recursos/imgs/interacao-slide-3.svg" style="width: 801px;margin-left: 43px;margin-top: 29px;">
+            <p style="position: absolute;top: 0px;left: 860px;color: white;">X</p>
+        </div>
+    </div>
+</div>
+<footer style="width: 1008px;height: 19px;display: flex;background-color: #CEE4F1;">
+    <div style="margin-top: -8px;display: flex;margin-left: 42px;">
+        <p style="color: #294666;font-size: 11px;">GESTÃO DA APS E PRÁTICAS INTEGRATIVAS EM SAÚDE</p>
+    </div>
+</footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>
